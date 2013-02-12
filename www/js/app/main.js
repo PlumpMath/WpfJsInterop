@@ -1,16 +1,10 @@
 // Defines the main app module. This one does the top level app wiring.
 
 define(function (require) {
-    'use strict';
+    "use strict";
 
-    var $ = require('jquery');
-
-    // Dependencies that do not have an export of their own, just attach
-    // to other objects, like jQuery. These are just used in the example
-    // bootstrap modal, not directly in the UI for the network and appCache
-    // displays.
-    require('bootstrap/modal');
-    require('bootstrap/transition');
+    var $ = require("jquery");
+	var _ = require("underscore");
 
     var fakeStatusView;
 

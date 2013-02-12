@@ -1,4 +1,9 @@
-define(['underscore', 'backbone', 'marionette', 'text!./FakeStatusView.html'], function(_, Backbone, Marionette, Template) {
+define(function(require) {
+
+	var _ = require("underscore"),
+		Backbone = require("backbone"),
+		Marionette = require("marionette"),
+		Template = require("text!./FakeStatusView.html");
 
 	return Marionette.ItemView.extend({
 

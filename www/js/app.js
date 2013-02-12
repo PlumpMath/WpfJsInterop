@@ -11,15 +11,7 @@ requirejs.config({
     baseUrl: 'js/lib',
     paths: {
         app: '../app',
-        'marionette': './marionette',
         'text': './text'
-    },
-
-    shim: {
-	    marionette : {
-	      deps : ['jquery', 'underscore', 'backbone'],
-	      exports : 'Marionette'
-	    }
     }
 });
 
