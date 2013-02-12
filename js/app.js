@@ -33,19 +33,11 @@
 
 //     Backbone may be freely distributed under the MIT license.
 
-// Backbone.Wreqr, v0.1.1
 // Copyright (c)2013 Derick Bailey, Muted Solutions, LLC.
-// Distributed under MIT license
-// http://github.com/marionettejs/backbone.wreqr
 
-// Backbone.BabySitter, v0.0.4
+// Distributed under MIT license
+
 // Copyright (c)2012 Derick Bailey, Muted Solutions, LLC.
-// Distributed under MIT license
-// http://github.com/marionettejs/backbone.babysitter
-
-// Copyright (c)2013 Derick Bailey, Muted Solutions, LLC.
-
-// Distributed under MIT license
 
 /**
  * @license RequireJS text 2.0.5 Copyright (c) 2010-2012, The Dojo Foundation All Rights Reserved.
