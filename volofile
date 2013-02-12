@@ -8,6 +8,15 @@ var crypto = require('crypto'),
     pagesDir = 'www-ghpages';
 
 module.exports = {
+
+	clean: {
+		summary: "removes '" + buildDir + "' and '" + pagesDir + "' directories.",
+		run: [
+			'v.rm ' + buildDir,
+			'v.rm ' + pagesDir
+		]
+	},
+
     //Builds the JS and CSS into one file each. If you want to do
     //dynamic loading of scripts, pass -dynamic to the build, and
     //require.js will be used to load scripts.
