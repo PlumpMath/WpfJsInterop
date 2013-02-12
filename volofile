@@ -5,7 +5,7 @@ var crypto = require('crypto'),
     fs = require('fs'),
     path = require('path'),
     buildDir = 'www-built',
-    pagesDir = 'www-ghpages';
+    pagesDir = '../WpfJsInterop-GHPages';
 
 module.exports = {
 
@@ -120,7 +120,7 @@ module.exports = {
     }),
 
     //Deploys the code to github pages.
-    ghdeploy: require('volo-ghdeploy')(buildDir, pagesDir),
+    deploy: require('volo-ghdeploy')(buildDir, pagesDir),
 
     //Runs less on the .less files in tools/less to generate the CSS files.
     less: {
