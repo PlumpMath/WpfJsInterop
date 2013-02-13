@@ -6314,8 +6314,20 @@ a.badge:focus {
     body {
         
         padding-top: 60px;
-	background-color: #333;
     }
+}
+@media (min-width: 768px) {
+	body {
+		padding-top: 20px;
+	}
+}
+@media (min-width: 20px) {
+	body {
+		padding-top: 2px;
+	}
+}
+body {
+	background-color: #333;
 }
 .container > .row > .sp {
 	background-color: #eee;
