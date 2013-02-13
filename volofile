@@ -55,7 +55,7 @@ module.exports = {
             })
                 .then(function () {
                     //JS go time
-                    var optimize = namedArgs.optimize || 'uglify';
+                    var optimize = namedArgs.optimize || 'uglify2';
 
                     if (namedArgs.dynamic) {
                         //Still use require.js to load the app.js file.
@@ -64,6 +64,8 @@ module.exports = {
                                         'baseUrl=js/lib',
                                         'paths.app=../app',
                                         'name=app',
+                                        'generateSourceMaps=true',
+                                        'preserveLicenseComments=false',
                                         'dir=' + buildDir,
                                         'optimize=' + optimize], {
                             useConsole: !namedArgs.quiet
@@ -73,6 +75,8 @@ module.exports = {
                         return v.spawn('node', ['tools/r.js', '-o',
                                         'baseUrl=www/js/lib',
                                         'paths.app=../app',
+                                        'generateSourceMaps=true',
+                                        'preserveLicenseComments=false',
                                         'paths.almond=../../../tools/almond',
                                         'name=almond',
                                         'include=app',
