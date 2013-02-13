@@ -8,6 +8,18 @@
     }
 }
 
+@media (min-width: 768px) {
+	body {
+		padding-top: 20px;
+	}
+}
+
+@media (min-width: 20px) {
+	body {
+		padding-top: 2px;
+	}
+}
+
 body {
 	background-color: #333;
 }
