@@ -20,7 +20,9 @@ define(function (require) {
 			    var payload = JSON.parse(message.Payload);
 			    switch(message.Type) {
 				    case "add":
-					    TodoCollection.create(payload);
+					    if (payload.length && payload.length >= 1) {
+					        TodoCollection.create(payload[0]);
+					    }
 					    break;
 				    default:
 //			            console.log ("Message Type: %o, Payload: %o", message.Type, payload);
