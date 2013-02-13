@@ -7,7 +7,7 @@ define(function(require) {
 		},
 
 		NotifyWPF: function() {
-			console.log("Shim.NotifyWPF: %o", arguments);
+			window.NotifyJs.apply(window, arguments);
 		}
 
 	};

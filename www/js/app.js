@@ -9,6 +9,7 @@
 // directory.
 requirejs.config({
     baseUrl: 'js/lib',
+	urlArgs: "bust=" + (new Date()).getTime(),
     paths: {
         app: '../app',
         'text': './text'

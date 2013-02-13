@@ -1,9 +1,9 @@
 define(function(require) {
 
 	var _ = require("underscore"),
-		Backbone = require("backbone"),
 		Marionette = require("marionette"),
-		Template = require("text!./FakeStatusView.html");
+		Template = require("text!./FakeStatusView.html"),
+		AppVent = require("app/Vent");
 
 	return Marionette.ItemView.extend({
 
@@ -24,6 +24,8 @@ define(function(require) {
 
 		onButtonClick: function (e) {
 			if (e && e.preventDefault) { e.preventDefault(); }
+
+			AppVent.trigger("notifywpf", "status", this._createModel());
 		},
 
 		onRender: function () {
@@ -32,6 +34,29 @@ define(function(require) {
 					el.val(0);
 				}
 			});
+		},
+
+		_createModel: function () {
+			return {
+				"Total": this.ui.inputTotal.val() || 0,
+				"Completed": this.ui.inputCompleted.val() || 0,
+				"Selected": this._generateSelected()
+			};
+		},
+
+		_generateSelected: function () {
+			var vals = [];
+			var initial = this._randomInt(1, 50);
+			var quantity = this.ui.inputSelected.val() || 0;
+			for (var i = 0; i < quantity; i++) {
+				vals.push(initial++);
+			}
+
+			return vals;
+		},
+
+		_randomInt: function(min, max) {
+			return Math.floor(Math.random() * (max - min + 1)) + min;
 		}
 
 	});
