@@ -21,7 +21,7 @@ define(function (require) {
 			    switch(message.Type) {
 				    case "add":
 					    if (payload.length && payload.length >= 1) {
-					        TodoCollection.create(payload[0]);
+					        TodoCollection.create({Title: payload[0]});
 					    }
 					    break;
 				    case "remove":
