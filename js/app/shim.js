@@ -1,1 +1,0 @@
-define(["require"],function(e){var t={Ready:function(){console.log("Shim.Ready: %o",arguments)},NotifyWPF:function(){window.NotifyJs.apply(window,arguments)}};return t});
