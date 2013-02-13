@@ -6327,3 +6327,7 @@ a.badge:focus {
 .container > .row  .form-actions {
 	margin-bottom: 0px;
 }
+.todolist {
+	max-height: 280px;
+	overflow-y: auto;
+}
