@@ -24,7 +24,11 @@ define(function (require) {
 					        TodoCollection.create(payload[0]);
 					    }
 					    break;
+				    case "remove":
+					    alert("Remove \"" + message.Payload + "\"");
+					    break;
 				    default:
+					    alert("Type: " + message.Type);
 //			            console.log ("Message Type: %o, Payload: %o", message.Type, payload);
 					    break;
 			    }
