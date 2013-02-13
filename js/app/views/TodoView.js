@@ -1,0 +1,1 @@
+define(["require","underscore","marionette","text!./TodoView.html"],function(e){var t=e("underscore"),n=e("marionette"),r=e("text!./TodoView.html");return n.ItemView.extend({template:t.template(r)})});
