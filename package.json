@@ -1,23 +1,7 @@
 {
   "name": "WpfJsInterop",
   "version": "0.0.0",
-  "amd": {
-    "baseUrl": "www/js/lib"
-  },
   "dependencies": {
-    "volo-ghdeploy": "*",
-    "volo-appcache": "*",
-    "less": ">= 1.3.0"
-  },
-  "volo": {
-    "dependencies": {
-      "jquery": "github:jquery/jquery/1.9.1",
-      "underscore": "github:amdjs/underscore/1.4.4",
-      "backbone": "github:amdjs/backbone/0.9.10",
-      "backbone.wreqr": "https://raw.github.com/marionettejs/backbone.wreqr/master/lib/amd/backbone.wreqr.js",
-      "backbone.babysitter": "https://raw.github.com/marionettejs/backbone.babysitter/master/lib/amd/backbone.babysitter.js",
-      "marionette": "http://marionettejs.com/downloads/core/amd/backbone.marionette.js",
-      "text": "https://raw.github.com/requirejs/text/latest/text.js"
-    }
+    "volo-ghdeploy": "*"
   }
 }

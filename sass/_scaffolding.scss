@@ -1,0 +1,23 @@
+@import "variables";
+
+body {
+	font-family: $baseFontFamily;
+	font-size: $baseFontSize;
+	line-height: $baseLineHeight;
+	color: $textColor;
+	background-color: $bodyBackground;
+}
+
+
+// Links
+// -----------------------------------------
+
+a {
+	color: $linkColor;
+	text-decoration: none;
+
+	&:hover, &:focus {
+		color: $linkColorHover;
+		text-decoration: underline;
+	}
+}
