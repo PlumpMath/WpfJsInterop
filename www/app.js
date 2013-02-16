@@ -1,5 +1,4 @@
 requirejs.config({
-	context: "WpfJsInterop",
 	baseUrl: "application",
 
 	deps: ["main"],
