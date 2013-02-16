@@ -1,0 +1,182 @@
+/* line 5, ../../sass/todos.scss */
+.index-view {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 2px 6px 0, rgba(0, 0, 0, 0.15) 0 25px 50px 0;
+  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 2px 6px 0, rgba(0, 0, 0, 0.15) 0 25px 50px 0;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 2px 6px 0, rgba(0, 0, 0, 0.15) 0 25px 50px 0;
+}
+/* line 9, ../../sass/todos.scss */
+.index-view .top-border {
+  border-bottom: 1px solid #6c615c;
+  height: 15px;
+  -moz-border-radius-topleft: 2px;
+  -webkit-border-top-left-radius: 2px;
+  border-top-left-radius: 2px;
+  -moz-border-radius-topright: 2px;
+  -webkit-border-top-right-radius: 2px;
+  border-top-right-radius: 2px;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0icmdiYSgxMzIsIDExMCwgMTAwLCAwLjgpIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSJyZ2JhKDEwMSwgODQsIDc2LCAwLjgpIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(132, 110, 100, 0.8)), color-stop(100%, rgba(101, 84, 76, 0.8)));
+  background-image: -webkit-linear-gradient(top, rgba(132, 110, 100, 0.8), rgba(101, 84, 76, 0.8));
+  background-image: -moz-linear-gradient(top, rgba(132, 110, 100, 0.8), rgba(101, 84, 76, 0.8));
+  background-image: -o-linear-gradient(top, rgba(132, 110, 100, 0.8), rgba(101, 84, 76, 0.8));
+  background-image: linear-gradient(top, rgba(132, 110, 100, 0.8), rgba(101, 84, 76, 0.8));
+}
+/* line 17, ../../sass/todos.scss */
+.index-view .todos-container {
+  background-color: rgba(255, 255, 255, 0.9);
+  position: relative;
+}
+/* line 22, ../../sass/todos.scss */
+.index-view .todos:before {
+  content: '';
+  border-left: 1px solid #f5d6d6;
+  border-right: 1px solid #f5d6d6;
+  height: 100%;
+  left: 40px;
+  position: absolute;
+  top: 0px;
+  width: 2px;
+}
+/* line 33, ../../sass/todos.scss */
+.index-view .todos {
+  position: relative;
+}
+/* line 37, ../../sass/todos.scss */
+.index-view .todo-input {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.02);
+  border: none;
+  color: inherit;
+  font-size: 24px;
+  line-eight: 1.4em;
+  outline: none;
+  padding: 16px 16px 16px 60px;
+  margin: 0;
+  width: 100%;
+  z-index: 1;
+}
+/* line 51, ../../sass/todos.scss */
+.index-view .todo-check {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -ms-appearance: none;
+  border: none;
+  height: 41px;
+  margin: 0;
+  text-align: center;
+  width: 65px;
+  z-index: 2;
+  left: -12px;
+  position: absolute;
+  top: 12px;
+}
+/* line 68, ../../sass/todos.scss */
+.index-view .input-view .todo-check:before {
+  content: '»';
+  font-size: 28px;
+  color: #d9d9d9;
+  padding: 0 25px 7px;
+}
+/* line 75, ../../sass/todos.scss */
+.index-view .input-view .todo-check:checked:before {
+  color: #737373;
+}
+/* line 79, ../../sass/todos.scss */
+.index-view .input-view .todo-check {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+/* line 85, ../../sass/todos.scss */
+.index-view .todo-list {
+  border-top: 1px dotted #ccc;
+  margin: 0;
+  padding: 0;
+}
+/* line 91, ../../sass/todos.scss */
+.index-view .todo-list li {
+  border-bottom: 1px dotted #ccc;
+  font-size: 24px;
+  position: relative;
+}
+/* line 96, ../../sass/todos.scss */
+.index-view .todo-list li:last-child {
+  border-bottom: none;
+}
+/* line 103, ../../sass/todos.scss */
+.index-view li .todo-input {
+  display: none;
+}
+/* line 107, ../../sass/todos.scss */
+.index-view li .todo-check {
+  height: auto;
+  left: 0px;
+  width: 40px;
+  top: 8px;
+}
+/* line 114, ../../sass/todos.scss */
+.index-view li .todo-check:after {
+  content: '✔';
+  font-size: 20px;
+  line-height: 43px;
+  color: #d9d9d9;
+  text-shadow: 0 -1px 0 #bfbfbf;
+}
+/* line 122, ../../sass/todos.scss */
+.index-view li .todo-check:checked:after {
+  color: #85ada7;
+  text-shadow: 0 -1px 0 #669991;
+}
+/* line 128, ../../sass/todos.scss */
+.index-view li label {
+  display: block;
+  line-height: 1.2;
+  padding: 15px;
+  margin-left: 45px;
+  word-break: break-word;
+}
+/* line 136, ../../sass/todos.scss */
+.index-view li:hover .destroy {
+  display: block;
+}
+/* line 140, ../../sass/todos.scss */
+.index-view li .destroy {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: none;
+  border: 0;
+  bottom: 0;
+  color: #a88a8a;
+  display: none;
+  font-size: 22px;
+  height: 40px;
+  margin: auto 0;
+  padding: 0;
+  position: absolute;
+  right: 10px;
+  top: 0;
+  width: 40px;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+/* line 158, ../../sass/todos.scss */
+.index-view li .destroy:after {
+  content: '✖';
+}
+/* line 162, ../../sass/todos.scss */
+.index-view li .destroy:hover {
+  -webkit-transform: scale(1.3, 1.3);
+  -moz-transform: scale(1.3, 1.3);
+  -ms-transform: scale(1.3, 1.3);
+  -o-transform: scale(1.3, 1.3);
+  transform: scale(1.3, 1.3);
+}
