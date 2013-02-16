@@ -6,17 +6,15 @@ define(function (require) {
 		Vent = require("system/Vent");
 
 	var _shimWindowExternal = function () {
-//		if (!window.external) {
-//			_.extend(window.external, {
-//				Ready: function() {
-//					console.log("Shim.Ready");
-//				},
-//
-//				NotifyWPF: function() {
-//					window[PublicCallbackName].apply(window, arguments);
-//				}
-//			});
-//		}
+		_.extend(window.external, {
+			Ready: function() {
+				console.log("Shim.Ready");
+			},
+
+			NotifyWPF: function() {
+				window[PublicCallbackName].apply(window, arguments);
+			}
+		});
 	};
 
 	var PublicCallbackName = "NotifyJs",
@@ -56,7 +54,7 @@ define(function (require) {
 			}
 			catch (e) {
 				_shimWindowExternal();
-//				window.external.Ready(PublicCallbackName);
+				window.external.Ready(PublicCallbackName);
 			}
 		}
 
