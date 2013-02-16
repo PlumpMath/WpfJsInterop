@@ -6,9 +6,6 @@ define(function (require) {
 		InputView = require("./todos/InputView"),
 		ListView = require("./todos/ListView");
 
-	// Require Styles
-	require("css!./styles/IndexView.css");
-
 	return Marionette.ItemView.extend({
 
 		className: "index-view",
