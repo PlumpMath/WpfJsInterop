@@ -1,7 +1,8 @@
 define(function (require) {
 	"use strict";
 
-	var _ = require("underscore"),
+	var $ = require("jquery"),
+		_ = require("underscore"),
 		Marionette = require("marionette"),
 		Template = require("hbs!./templates/IndexView"),
 		TodoCollection = require("data/TodoCollection"),
@@ -38,7 +39,7 @@ define(function (require) {
 		},
 
 		initialize: function () {
-
+			Vent.on("force:repaint", this.onForceRepaint, this);
 		},
 
 		onNewTodoKeypress: function (e) {
@@ -54,6 +55,23 @@ define(function (require) {
 
 		onTodosChanged: function () {
 			Vent.trigger("todos:change");
+		},
+
+		onAfterItemAdded: function () {
+			this.onForceRepaint();
+		},
+
+		onForceRepaint: function () {
+			// This is for IE because it sucks
+			if (!$.support.boxSizingReliable) {
+				var ctx = this;
+				_.delay(function () {
+					ctx.$el.append('<br id="force-refresh">');
+					_.delay(function () {
+						ctx.$("#force-refresh").remove();
+					}, 15);
+				}, 15);
+			}
 		},
 
 		onCompleteAll: function () {

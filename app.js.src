@@ -14983,20 +14983,20 @@ define('system/WpfInterop',['require','underscore','common/BaseObject','system/V
 		},
 
 		notifyWpf: function (eventName, payload) {
-			window.external.NotifyWPF(JSON.stringify({
-				"Type": eventName,
-				"Payload": JSON.stringify(payload)
-			}));
+//			window.external.NotifyWPF(JSON.stringify({
+//				"Type": eventName,
+//				"Payload": JSON.stringify(payload)
+//			}));
 		},
 
 		notifyReady: function() {
-			try {
-				window.external.Ready(PublicCallbackName);
-			}
-			catch (e) {
-				_shimWindowExternal();
-				window.external.Ready(PublicCallbackName);
-			}
+//			try {
+//				window.external.Ready(PublicCallbackName);
+//			}
+//			catch (e) {
+//				_shimWindowExternal();
+//				window.external.Ready(PublicCallbackName);
+//			}
 		}
 
 	});
@@ -19113,10 +19113,11 @@ define('modules/todo/views/TodoItemView',['require','marionette','hbs!./template
 
 	});
 });
-define('modules/todo/views/IndexView',['require','underscore','marionette','hbs!./templates/IndexView','data/TodoCollection','./TodoItemView','system/Vent'],function (require) {
+define('modules/todo/views/IndexView',['require','jquery','underscore','marionette','hbs!./templates/IndexView','data/TodoCollection','./TodoItemView','system/Vent'],function (require) {
 	
 
-	var _ = require("underscore"),
+	var $ = require("jquery"),
+		_ = require("underscore"),
 		Marionette = require("marionette"),
 		Template = require("hbs!./templates/IndexView"),
 		TodoCollection = require("data/TodoCollection"),
@@ -19153,7 +19154,7 @@ define('modules/todo/views/IndexView',['require','underscore','marionette','hbs!
 		},
 
 		initialize: function () {
-
+			Vent.on("force:repaint", this.onForceRepaint, this);
 		},
 
 		onNewTodoKeypress: function (e) {
@@ -19169,6 +19170,23 @@ define('modules/todo/views/IndexView',['require','underscore','marionette','hbs!
 
 		onTodosChanged: function () {
 			Vent.trigger("todos:change");
+		},
+
+		onAfterItemAdded: function () {
+			this.onForceRepaint();
+		},
+
+		onForceRepaint: function () {
+			// This is for IE because it sucks
+			if (!$.support.boxSizingReliable) {
+				var ctx = this;
+				_.delay(function () {
+					ctx.$el.append('<br id="force-refresh">');
+					_.delay(function () {
+						ctx.$("#force-refresh").remove();
+					}, 15);
+				}, 15);
+			}
 		},
 
 		onCompleteAll: function () {
