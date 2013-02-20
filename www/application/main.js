@@ -8,7 +8,7 @@ define(function (require) {
 		Backbone = require("backbone"),
 		Marionette = require("marionette"),
 		Vent = require("system/Vent"),
-		AppConfig = require("system/AppConfig"),
+		AppConfig = require("AppConfig"),
 		AppLayout = require("AppLayout"),
 		Application;
 

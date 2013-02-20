@@ -1,0 +1,7 @@
+@import "compass";
+
+@mixin font-smoothing($fontSmoothing: "antialiased"){
+	@include experimental(font-smoothing, $fontSmoothing,
+		-moz, -webkit, -o, -ms, -khtml, official
+	);
+}

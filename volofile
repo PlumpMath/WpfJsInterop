@@ -100,7 +100,6 @@ module.exports = {
                             function (match, pre, script, post) {
                                 return pre + 'src="' + buildJsName + '"' + post;
                             });
-
                         v.write(indexName, contents);
                     }
                     return buildOutput;

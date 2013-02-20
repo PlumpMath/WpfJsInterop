@@ -4,20 +4,21 @@ define(function (require) {
 	var _ = require("underscore"),
 		Marionette = require("marionette"),
 		Vent = require("system/Vent"),
-		AppConfig = require("system/AppConfig"),
-		Template = require("text!./AppLayout.hbs"),
+		AppConfig = require("AppConfig"),
+		Template = require("hbs!./AppLayout.tpl"),
 		AppLayout;
 
 	AppLayout = Marionette.Layout.extend({
-		className: "page",
+
+		id: "page-container",
+		className: "row",
 
 		template: Template,
 
 		regions: {
-			header: ".banner",
-			nav: ".pagenav",
-			main: ".main",
-			footer: ".contentinfo"
+			header: "#header",
+			main: "#main",
+			footer: "#footer"
 		},
 
 		events: {

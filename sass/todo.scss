@@ -1,0 +1,134 @@
+@import "compass";
+@import "compass/css3";
+@import "compass/css3/user-interface";
+
+@import "groundwork/variables";
+
+$experimental-support-for-svg: true;
+
+$border-style: 1px dotted #ccc;
+
+.index-view {
+
+	@include box-shadow(rgba(0, 0, 0, 0.2) 0 2px 6px 0, rgba(0, 0, 0, 0.15) 0 25px 50px 0);
+
+	.top-border {
+		border-bottom: 1px solid #6c615c;
+		height: 15px;
+		@include border-top-radius(2px);
+
+		@include background-image(linear-gradient(top, rgba(132, 110, 100, 0.8), rgba(101, 84, 76, 0.8)));
+	}
+
+	.todos-container {
+		background-color: rgba(255, 255, 255, 0.9);
+		position: relative;
+	}
+
+
+	.todos:before {
+		content: '';
+		border-left: 1px solid #f5d6d6;
+		border-right: 1px solid #f5d6d6;
+		height: 100%;
+		left: 40px;
+		position: absolute;
+		top: 0px;
+		width: 4px;
+	}
+
+	.view {
+		position: relative;
+
+		.todo-check {
+			left: 0px;
+			position: absolute;
+			top: 6px;
+		}
+	}
+
+	.input-view {
+		.todo-input {
+			font-family: inherit;
+		}
+	}
+
+	.todo-check {
+		background: none;
+		border: none;
+		color: #d9d9d9;
+		font-size: 28px;
+		height: 80%;
+		margin: 0;
+		padding: 0;
+		text-align: center;
+		width: 41px;
+		z-index: 2;
+	}
+
+	.todo-input {
+		@include box-sizing(border-box);
+		background-color: rgba(0, 0, 0, 0.02);
+		border: none;
+		color: inherit;
+		font-size: 24px;
+		line-height: 1.4em;
+		outline: none;
+		padding: 16px 16px 16px 60px;
+		margin: 0;
+		width: 100%;
+		z-index: 1;
+	}
+
+	.todo-list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+
+		li {
+			border-bottom: $border-style;
+			font-size: 24px;
+			line-height: 1.4em;
+
+			@include user-select(none);
+
+			&:first-child {
+				border-top: $border-style;
+			}
+
+			&:last-child {
+				border-bottom: none;
+			}
+		}
+	}
+
+	li label {
+		display: block;
+		line-height: 1.2em;
+		padding: 15px;
+		margin-left: 45px;
+		word-break: break-word;
+	}
+
+	li.completed {
+
+		.todo-check {
+			color: #85ada7;
+			text-shadow: 0 1px 0 #669991;
+		}
+
+		label {
+			color: #a9a9a9;
+			text-decoration: line-through;
+		}
+
+	}
+
+	li.selected {
+		.view {
+			background-color: rgba(red($success-color), green($success-color), blue($success-color), .15);
+		}
+	}
+
+}

@@ -1,31 +1,56 @@
-@import "compass/reset";
-@import "compass/css3";
+@import "compass";
+@import "mixin";
 
-@import "grid";
-@import "variables";
+@import "groundwork/variables";
 
-@import "scaffolding";
-
+$font-smoothing: antialiased;
 
 body {
 	@include background-image(image-url("bg.png"));
+	@include font-smoothing($font-smoothing);
 }
 
-.banner {
-	line-height: normal;
+input, select, textarea {
+	@include font-smoothing($font-smoothing);
+	height: auto;
+}
+
+input::-webkit-input-placeholder,
+input::-moz-placeholder {
+	font-style: italic;
+}
+input:-ms-input-placeholder {
+	font-style: italic;
+}
+
+#page-container {
+	padding-top: 3em;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+	#page-container {
+		padding-top: 2em;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	#page-container {
+		padding-top: 1em;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	#page-container {
+		padding-top: .1em;
+	}
 }
 
 .header {
-	margin-top: 15px;
-	margin-bottom: 15px;
-	line-height: normal;
-
 	h1 {
 		color: rgba(255, 255, 255, 0.3);
 		font-size: 50px;
 		font-weight: bold;
 		text-align: center;
-
 		@include single-text-shadow(-1px, -1px, 0px, $color: rgba(0, 0, 0, 0.2));
 	}
 }
