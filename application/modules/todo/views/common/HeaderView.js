@@ -2,7 +2,7 @@ define(function (require) {
 	"use strict";
 
 	var Marionette = require("marionette"),
-		Template = require("text!../templates/HeaderView.hbs");
+		Template = require("hbs!../templates/HeaderView");
 
 	return Marionette.ItemView.extend({
 

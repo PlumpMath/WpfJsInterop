@@ -1,0 +1,17 @@
+.index-view { -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 2px 6px 0, rgba(0, 0, 0, 0.15) 0 25px 50px 0; -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 2px 6px 0, rgba(0, 0, 0, 0.15) 0 25px 50px 0; box-shadow: rgba(0, 0, 0, 0.2) 0 2px 6px 0, rgba(0, 0, 0, 0.15) 0 25px 50px 0; }
+.index-view .top-border { border-bottom: 1px solid #6c615c; height: 15px; -moz-border-radius-topleft: 2px; -webkit-border-top-left-radius: 2px; border-top-left-radius: 2px; -moz-border-radius-topright: 2px; -webkit-border-top-right-radius: 2px; border-top-right-radius: 2px; background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0icmdiYSgxMzIsIDExMCwgMTAwLCAwLjgpIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSJyZ2JhKDEwMSwgODQsIDc2LCAwLjgpIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g'); background-size: 100%; background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(132, 110, 100, 0.8)), color-stop(100%, rgba(101, 84, 76, 0.8))); background-image: -webkit-linear-gradient(top, rgba(132, 110, 100, 0.8), rgba(101, 84, 76, 0.8)); background-image: -moz-linear-gradient(top, rgba(132, 110, 100, 0.8), rgba(101, 84, 76, 0.8)); background-image: -o-linear-gradient(top, rgba(132, 110, 100, 0.8), rgba(101, 84, 76, 0.8)); background-image: linear-gradient(top, rgba(132, 110, 100, 0.8), rgba(101, 84, 76, 0.8)); }
+.index-view .todos-container { background-color: rgba(255, 255, 255, 0.9); position: relative; }
+.index-view .todos:before { content: ''; border-left: 1px solid #f5d6d6; border-right: 1px solid #f5d6d6; height: 100%; left: 40px; position: absolute; top: 0px; width: 4px; }
+.index-view .view { position: relative; }
+.index-view .view .todo-check { left: 0px; position: absolute; top: 6px; }
+.index-view .input-view .todo-input { font-family: inherit; }
+.index-view .todo-check { background: none; border: none; color: #d9d9d9; font-size: 28px; height: 80%; margin: 0; padding: 0; text-align: center; width: 41px; z-index: 2; }
+.index-view .todo-input { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; background-color: rgba(0, 0, 0, 0.02); border: none; color: inherit; font-size: 24px; line-height: 1.4em; outline: none; padding: 16px 16px 16px 60px; margin: 0; width: 100%; z-index: 1; }
+.index-view .todo-list { list-style: none; margin: 0; padding: 0; }
+.index-view .todo-list li { border-bottom: 1px dotted #cccccc; font-size: 24px; line-height: 1.4em; -webkit-user-select: none; -moz-user-select: none; user-select: none; }
+.index-view .todo-list li:first-child { border-top: 1px dotted #cccccc; }
+.index-view .todo-list li:last-child { border-bottom: none; }
+.index-view li label { display: block; line-height: 1.2em; padding: 15px; margin-left: 45px; word-break: break-word; }
+.index-view li.completed .todo-check { color: #85ada7; text-shadow: 0 1px 0 #669991; }
+.index-view li.completed label { color: #a9a9a9; text-decoration: line-through; }
+.index-view li.selected .view { background-color: rgba(95, 180, 14, 0.15); }

@@ -8,7 +8,10 @@ define(function (require) {
 	var _shimWindowExternal = function () {
 		_.extend(window.external, {
 			Ready: function() {
-				console.log("Shim.Ready");
+				console.log("Shim.Ready: %o", JSON.stringify({
+					Type: "add",
+					Payload: JSON.stringify(["TODO #1"])
+				}));
 			},
 
 			NotifyWPF: function() {
@@ -29,15 +32,22 @@ define(function (require) {
 		},
 
 		notifyCallback: function(message) {
+			var EventType,
+				EventPayload;
 			if (!_.isNullOrEmpty(message)) {
 				try {
 					message = JSON.parse(message);
 					var payload = JSON.parse(message.Payload);
 					if (!_.isNullOrEmpty(message.Type)) {
-						Vent.trigger("interop:" + message.Type, payload);
+						EventType = message.Type;
+						EventPayload = payload;
 					}
 				}
 				catch(e) {}
+			}
+
+			if (!_.isNullOrEmpty(EventType) && !_.isNullOrEmpty(EventPayload)) {
+				Vent.trigger("interop:" + EventType, EventPayload);
 			}
 		},
 
@@ -63,8 +73,9 @@ define(function (require) {
 	instance = new WpfInterop();
 
 	window[PublicCallbackName] = function () {
-		WpfInterop.prototype.notifyCallback.call(instance, arguments);
+		WpfInterop.prototype.notifyCallback.apply(instance, arguments);
 	};
+	window.TODO_COUNT = 0;
 
 	return instance;
 });

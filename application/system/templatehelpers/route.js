@@ -3,7 +3,7 @@ define(function (require) {
 
 	var _ = require("underscore"),
 		Handlebars = require("handlebars"),
-		AppConfig = require("system/AppConfig");
+		AppConfig = require("AppConfig");
 
 	Handlebars.registerHelper("route", function(url, options) {
 		options.hash["data-route"] = url;

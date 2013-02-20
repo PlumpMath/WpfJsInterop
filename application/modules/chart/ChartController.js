@@ -16,11 +16,11 @@ define(function (require) {
 		},
 
 		onBeforeAction: function() {
-			this.layout.footer.show(new FooterView());
+//			this.layout.footer.show(new FooterView());
 		},
 
 		index: function() {
-			this.layout.main.show(new IndexView());
+//			this.layout.main.show(new IndexView());
 		}
 
 	});
