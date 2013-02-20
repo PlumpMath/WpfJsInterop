@@ -52,20 +52,20 @@ define(function (require) {
 		},
 
 		notifyWpf: function (eventName, payload) {
-//			window.external.NotifyWPF(JSON.stringify({
-//				"Type": eventName,
-//				"Payload": JSON.stringify(payload)
-//			}));
+			window.external.NotifyWPF(JSON.stringify({
+				"Type": eventName,
+				"Payload": JSON.stringify(payload)
+			}));
 		},
 
 		notifyReady: function() {
-//			try {
-//				window.external.Ready(PublicCallbackName);
-//			}
-//			catch (e) {
-//				_shimWindowExternal();
-//				window.external.Ready(PublicCallbackName);
-//			}
+			try {
+				window.external.Ready(PublicCallbackName);
+			}
+			catch (e) {
+				_shimWindowExternal();
+				window.external.Ready(PublicCallbackName);
+			}
 		}
 
 	});
