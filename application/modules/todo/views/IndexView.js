@@ -60,6 +60,9 @@ define(function (require) {
 		onAfterItemAdded: function () {
 			this.onForceRepaint();
 		},
+		onItemRemoved: function () {
+			this.onForceRepaint();
+		},
 
 		onForceRepaint: function () {
 			// This is for IE because it sucks

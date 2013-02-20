@@ -19175,6 +19175,9 @@ define('modules/todo/views/IndexView',['require','jquery','underscore','marionet
 		onAfterItemAdded: function () {
 			this.onForceRepaint();
 		},
+		onItemRemoved: function () {
+			this.onForceRepaint();
+		},
 
 		onForceRepaint: function () {
 			// This is for IE because it sucks
