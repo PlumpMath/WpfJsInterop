@@ -19362,6 +19362,8 @@ define('main',['require','./system/System','jquery','backbone','marionette','sys
 requirejs.config({
 	baseUrl: "application",
 
+
+
 	deps: ["main"],
 //	waitSeconds: 0,
 
