@@ -36,11 +36,11 @@ define(function (require) {
 				EventPayload;
 			if (!_.isNullOrEmpty(message)) {
 				try {
-					message = JSON.parse(message);
-					var payload = JSON.parse(message.Payload);
+//					message = JSON.parse(message);
+//					var payload = JSON.parse(message.Payload);
 					if (!_.isNullOrEmpty(message.Type)) {
 						EventType = message.Type;
-						EventPayload = payload;
+						EventPayload = message.Payload;
 					}
 				}
 				catch(e) {}
@@ -52,10 +52,10 @@ define(function (require) {
 		},
 
 		notifyWpf: function (eventName, payload) {
-			window.external.NotifyWPF(JSON.stringify({
+			window.external.NotifyWPF({
 				"Type": eventName,
-				"Payload": JSON.stringify(payload)
-			}));
+				"Payload": payload
+			});
 		},
 
 		notifyReady: function() {
