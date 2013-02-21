@@ -36,11 +36,11 @@ define(function (require) {
 				EventPayload;
 			if (!_.isNullOrEmpty(message)) {
 				try {
-//					message = JSON.parse(message);
-//					var payload = JSON.parse(message.Payload);
+					message = JSON.parse(message);
+					var payload = JSON.parse(message.Payload);
 					if (!_.isNullOrEmpty(message.Type)) {
 						EventType = message.Type;
-						EventPayload = message.Payload;
+						EventPayload = payload;
 					}
 				}
 				catch(e) {}
@@ -52,10 +52,10 @@ define(function (require) {
 		},
 
 		notifyWpf: function (eventName, payload) {
-			window.external.NotifyWPF({
+			window.external.NotifyWPF(JSON.stringify({
 				"Type": eventName,
-				"Payload": payload
-			});
+				"Payload": JSON.stringify(payload)
+			}));
 		},
 
 		notifyReady: function() {
@@ -63,11 +63,9 @@ define(function (require) {
 				window.external.Ready(PublicCallbackName);
 			}
 			catch (e) {
-				alert("Error: " + e.message);
 				_shimWindowExternal();
 				window.external.Ready(PublicCallbackName);
 			}
-//			window.external.SetTestObject({Message: "This is a json object"});
 		}
 
 	});
