@@ -14998,7 +14998,7 @@ define('system/WpfInterop',['require','underscore','common/BaseObject','system/V
 				_shimWindowExternal();
 				window.external.Ready(PublicCallbackName);
 			}
-			window.external.SetTestObject({Message: "This is a json object"});
+//			window.external.SetTestObject({Message: "This is a json object"});
 		}
 
 	});

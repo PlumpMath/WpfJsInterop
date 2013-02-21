@@ -67,7 +67,7 @@ define(function (require) {
 				_shimWindowExternal();
 				window.external.Ready(PublicCallbackName);
 			}
-			window.external.SetTestObject({Message: "This is a json object"});
+//			window.external.SetTestObject({Message: "This is a json object"});
 		}
 
 	});
