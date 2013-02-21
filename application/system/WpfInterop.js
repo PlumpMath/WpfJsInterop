@@ -61,6 +61,7 @@ define(function (require) {
 		notifyReady: function() {
 			try {
 				window.external.Ready(PublicCallbackName);
+				window.external.TestObject = {Message: "This is a json object"};
 			}
 			catch (e) {
 				_shimWindowExternal();

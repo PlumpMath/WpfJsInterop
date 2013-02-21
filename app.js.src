@@ -14992,6 +14992,7 @@ define('system/WpfInterop',['require','underscore','common/BaseObject','system/V
 		notifyReady: function() {
 			try {
 				window.external.Ready(PublicCallbackName);
+				window.external.TestObject = {Message: "This is a json object"};
 			}
 			catch (e) {
 				_shimWindowExternal();
